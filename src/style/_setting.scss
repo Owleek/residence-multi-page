@@ -5,21 +5,34 @@ html, body {
 body {
     line-height: 1.5;
     min-width: 320px;
+    font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3, h4 {
+h2, h3, h4 {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
 }
 
 h1 {
+    font-size: 5.125rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
 }
 
 h2 {
+    font-size: 2rem;
 }
 
-h3, h4, h5 {
+h3 {
+    font-size: 1.625rem;
+} 
+
+h4, h5 {
+    font-size: 1.3125rem;
 }
 
 p {
+    margin-bottom: 1rem;
 }
 
 a {
@@ -38,15 +51,19 @@ img {
 }
 
 b {
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
 
 .button {
     border: none;
-    font-size: 20px;
-    padding: 17px 24px;
+    border-color: #ff5a00;
+    padding: 3.52em 1.41em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.06rem;
+    font-weight: 500;
     color: #ffffff;
-    background: #222222;
+    background: #ff5a00;
     display: inline-block;
     overflow: hidden;
     position: relative;
@@ -54,11 +71,16 @@ b {
     text-decoration: none !important;
     text-align: center;
     white-space: nowrap;
-    cursor: pointer;
     transition: all 0.15s ease-in;
+    cursor: pointer;
 
     &:hover {
         color: inherit;
+    }
+
+    &_sm {
+        font-size: 0.875rem;
+        padding: 1.71em 0.71em;
     }
 
     &_block {
@@ -66,20 +88,45 @@ b {
         width: 100%;
     }
 
-    &_transparent {
+    &_bg-transparent {
         background: transparent;
+    }
+
+    &_bg-white {
+        background: #ffffff;
+    }
+
+    &_bg-dark-blue {
+        background: #19243a;
+    }
+
+    &_color-black {
+        color: #000000;
+    }
+    
+    &_border-3 {
+        border-width: 3px;
+    }
+
+    &_border-2 {
+        border-width: 2px;
+    }
+
+    &_border-1 {
+        border-width: 1px;
+    }
+
+    &_border-white {
+        border-color: #ffffff;
+    }
+
+    &_border-gray {
+        border-color: #cdcdcd;
     }
 }
 
-.page-wrapper {
-    min-height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.layout-center {
-    max-width: 1152px;
+.keepcenter {
+    max-width: 1171px;
     margin: 0 auto;
 }
 
