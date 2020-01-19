@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/FontAwesome.eot');
+    src: url('../fonts/FontAwesome.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/FontAwesome.woff2') format('woff2'),
+        url('../fonts/FontAwesome.woff') format('woff'),
+        url('../fonts/FontAwesome.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/MyriadPro-It.eot');
+    src: url('../fonts/MyriadPro-It.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MyriadPro-It.woff2') format('woff2'),
+        url('../fonts/MyriadPro-It.woff') format('woff'),
+        url('../fonts/MyriadPro-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: url('../fonts/InterUI-Black.eot');
+    src: url('../fonts/InterUI-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/InterUI-Black.woff2') format('woff2'),
+        url('../fonts/InterUI-Black.woff') format('woff'),
+        url('../fonts/InterUI-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-BoldItalic.eot');
+    src: url('../fonts/Montserrat-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Montserrat-BoldItalic.woff') format('woff'),
+        url('../fonts/Montserrat-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
