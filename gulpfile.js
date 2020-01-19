@@ -16,8 +16,8 @@ const path = {
         html   : "dist/",
         js     : "dist/js/",
         style  : "dist/style/",
-        images : "dist/images/",
-        svg    : "dist/images/svg/",
+        img    : "dist/img/",
+        svg    : "dist/img/svg/",
         fonts  : "dist/fonts/"
     },
 
@@ -25,8 +25,8 @@ const path = {
         html  : "src/*.html",
         js    : "src/js/*.js",
         style : "src/style/*.scss",
-        images: "src/images/**/*.{jpg,png,gif,ico}",
-        svg   : "src/images/svg/*.svg",
+        img   : "src/img/**/*.{jpg,png,gif,ico}",
+        svg   : "src/img/svg/*.svg",
         fonts : "src/fonts/**/*"
     },
 
@@ -34,8 +34,8 @@ const path = {
         html  : "src/**/*.html",
         js    : "src/js/**/*.js",
         style : "src/style/**/*.scss",
-        images: "src/images/**/*.{jpg,png,gif,ico}",
-        svg   : "src/images/**/*.svg",
+        img   : "src/img/**/*.{jpg,png,gif,ico}",
+        svg   : "src/img/**/*.svg",
         fonts : "src/fonts/**/*"
     },
 
@@ -88,10 +88,10 @@ function scripts() {
     .pipe(browsersync.stream());
 }
 
-function images() {
-    return gulp.src(path.src.images)
+function img() {
+    return gulp.src(path.src.img)
     .pipe(imagemin())
-    .pipe(gulp.dest(path.build.images));
+    .pipe(gulp.dest(path.build.img));
 }
 
 function svg() {
@@ -140,7 +140,7 @@ function watchFiles() {
     gulp.watch(path.watch.html, html);
     gulp.watch(path.watch.style, style);
     gulp.watch(path.watch.js, scripts);
-    gulp.watch(path.watch.images, images);
+    gulp.watch(path.watch.img, img);
     gulp.watch(path.watch.svg, svg);
     gulp.watch(path.watch.svg, svgOrigin);
     gulp.watch(path.watch.fonts, fonts);
@@ -150,13 +150,13 @@ function clean() {
     return del(path.clean);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, style, scripts, images, svg, svgOrigin, fonts));
+const build = gulp.series(clean, gulp.parallel(html, style, scripts, img, svg, svgOrigin, fonts));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.html        = html;
 exports.style       = style;
 exports.scripts     = scripts;
-exports.images      = images;
+exports.img         = img;
 exports.svg         = svg;
 exports.svgOrigin   = svgOrigin;
 exports.fonts       = fonts;

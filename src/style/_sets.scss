@@ -1,5 +1,6 @@
+@import "reset";
 @import "fonts";
-@import "variables";
+@import "vars";
 
 html, body {
     height: 100%;
@@ -9,6 +10,7 @@ body {
     line-height: 1.5;
     min-width: 320px;
     font-family: 'Roboto', sans-serif;
+    background-color: #f1f1f1;
 }
 
 h2, h3, h4 {
@@ -58,10 +60,12 @@ b {
     font-weight: 500;
 }
 
-.button {
-    border: none;
+.btn {
+    border-width: 0;
     border-color: #ff5a00;
-    padding: 3.52em 1.41em;
+    border-style: solid;
+    padding: 1.52em 2.64em;
+    border-radius: 100px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.06rem;
     font-weight: 500;
@@ -83,7 +87,7 @@ b {
 
     &_sm {
         font-size: 0.875rem;
-        padding: 1.71em 0.71em;
+        padding: 0.71em 1.71em;
     }
 
     &_block {
@@ -100,7 +104,7 @@ b {
     }
 
     &_bg-dark-blue {
-        background: #19243a;
+        background: #172239;
     }
 
     &_color-black {
@@ -126,6 +130,11 @@ b {
     &_border-gray {
         border-color: #cdcdcd;
     }
+}
+
+.layout {
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .keepcenter {

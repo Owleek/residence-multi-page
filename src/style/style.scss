@@ -1,0 +1,41 @@
+@import "sets";
+
+.header {
+    background-image: url("../img/background_1.1.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 1.25em;
+    padding-bottom: 2.375em;
+
+    color: $white;
+    a {
+        color: $white;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left-column {}
+
+    .header__logo {
+        display: inline-block;
+        max-width: 288px;
+        min-width: 180px;
+    }
+
+    &__right-column {}
+
+    &__contact {
+        margin-bottom: 1rem;
+
+        .contact {
+            font-size: 1.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+        }
+    }
+}
