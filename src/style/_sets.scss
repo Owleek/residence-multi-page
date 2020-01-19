@@ -11,6 +11,7 @@ body {
     min-width: 320px;
     font-family: 'Roboto', sans-serif;
     background-color: #f1f1f1;
+    color: $black;
 }
 
 h2, h3, h4 {
@@ -69,7 +70,7 @@ b {
     font-family: 'Roboto', sans-serif;
     font-size: 1.06rem;
     font-weight: 500;
-    color: #ffffff;
+    color: $white;
     background: #ff5a00;
     display: inline-block;
     overflow: hidden;
@@ -101,6 +102,7 @@ b {
 
     &_bg-white {
         background: #ffffff;
+        color: $black;
     }
 
     &_bg-dark-blue {
@@ -133,13 +135,21 @@ b {
 }
 
 .layout {
+    position: relative;
     max-width: 1920px;
     margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .keepcenter {
     max-width: 1171px;
     margin: 0 auto;
+}
+
+.main {
+    flex-grow: 1;
 }
 
 .image-wrapper,

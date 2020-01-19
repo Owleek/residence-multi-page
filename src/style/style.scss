@@ -1,5 +1,6 @@
 @import "sets";
 
+//  header begin
 .header {
     background-image: url("../img/background_1.1.jpg");
     background-position: 50% 50%;
@@ -7,8 +8,8 @@
     background-repeat: no-repeat;
     padding-top: 1.25em;
     padding-bottom: 2.375em;
-
     color: $white;
+
     a {
         color: $white;
     }
@@ -18,18 +19,18 @@
         justify-content: space-between;
     }
 
-    &__left-column {}
-
     .header__logo {
         display: inline-block;
         max-width: 288px;
         min-width: 180px;
     }
 
-    &__right-column {}
-
     &__contact {
         margin-bottom: 1rem;
+
+        .contact-label {
+            font-size: 0.875rem;
+        }
 
         .contact {
             font-size: 1.375rem;
@@ -38,4 +39,82 @@
             display: block;
         }
     }
+
+    &__no-bg {
+        background: transparent;
+    }
+
+    &__absoute {
+        position: absolute;
+        left: 0; top: 0;
+    }
 }
+//  header end
+
+// footer begin
+.footer {
+    padding-top: 2.5em;
+    padding-bottom: 2.875em;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } 
+
+    &__contact {
+        .contact-label {
+
+        }
+
+        .contact {
+            display: block;
+            text-decoration: none;
+            font-size: 1.81rem;
+            color: $black;
+            font-weight: 700;
+        }
+    }
+
+    .footer__socials {
+        font-size: 0;
+    }
+}
+
+.social {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100%;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    
+    &:not(:first-child) {
+        margin-left: -6px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        z-index: 10;
+    }
+
+    &__icon {
+        width: 2.8125rem;
+        height: 2.8125rem;
+    }
+
+    &_viber {
+        z-index: 2;
+    }
+
+    &_whatsApp {
+        z-index: 1;
+    }
+
+    &_telegram {
+        .social__icon {
+            width: 2.875‬rem;
+            height: 2.875‬rem;
+        }
+    }
+}
+// footer end
