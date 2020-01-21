@@ -4,6 +4,7 @@
 .header {
     background-image: url("../img/background_1.1.jpg");
     background-position: 50% 50%;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 1.25em;
@@ -40,16 +41,78 @@
         }
     }
 
-    &__no-bg {
+    &_no-bg {
         background: transparent;
     }
 
-    &__absoute {
+    &_absolute {
         position: absolute;
         left: 0; top: 0;
     }
 }
 //  header end
+
+// main begin
+
+.main {
+
+}
+
+.head-section {
+    text-align: center;
+    color: $white;
+    padding-top: 1.25em;
+    background-image: url("../img/background_1.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__column {
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        max-width: 45.7%;
+    }
+
+    &__logo {
+        text-decoration: none;
+        display: inline-block;
+        width: 82px;
+        margin-bottom: 2.875rem;
+    }
+
+    &__title {
+        margin-bottom: 0.38em;
+
+        .weight-lighter {
+            font-weight: 500;
+        }
+
+        .highlighted {
+            display: block;
+            font-size: 5.125rem;
+            text-transform: uppercase;
+        }
+    }
+    &__subtitle {
+        font-weight: 500;
+    }
+
+    &__text-like-subtitle {
+        font-weight: 300;
+        margin-bottom: 1.9em;
+    }
+
+    &__btn-holder {
+        margin-bottom: 5rem;
+    }
+}
+.head-section {}
+.head-section {}
+.head-section {}
+
+// main end
+
 
 // footer begin
 .footer {
