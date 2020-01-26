@@ -23,6 +23,10 @@ h1 {
     font-size: 2.4375rem;
     font-weight: 900;
     margin-bottom: 2rem;
+
+    @include respond(md) {
+        font-size: 1.19rem;
+    }
 }
 
 h2 {
@@ -35,6 +39,16 @@ h3 {
 
 h4, h5 {
     font-size: 1.3125rem;
+
+    @include respond(md) {
+        font-size: 1.25rem;
+    }
+}
+
+h5 {
+    @include respond(md) {
+        font-size: 1.125rem;
+    }
 }
 
 p {
@@ -89,6 +103,16 @@ b {
     &_sm {
         font-size: 0.875rem;
         padding: 0.71em 1.71em;
+
+        @include respond(md) {
+            font-size: 0.625rem;
+        }
+
+        &-const {
+            @include respond(md) {
+                font-size: 0.875rem;
+            }
+        }
     }
 
     &_block {
@@ -125,12 +149,46 @@ b {
         border-width: 1px;
     }
 
+    &_icon {
+        &:after {
+            content: "\f175";
+            font-family: "FontAwesome";
+            font-weight: 400;
+            font-size: 1.05em;
+            color: #ffffff;
+            position: absolute;
+            right: 1.3em; top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
     &_border-white {
         border-color: #ffffff;
     }
 
     &_border-gray {
         border-color: #cdcdcd;
+    }
+
+    &_border-blue {
+        border-color: $light-blue;
+    }
+
+    &_empty-lg {
+        @media only screen and (min-width: 1024px) {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            text-decoration: none;
+            background: transparent;
+            color: inherit;
+            border-radius: 0;
+            font-size: inherit;
+            font-weight: 400;
+            color: inherit;
+            white-space: inherit;
+        }
     }
 }
 
@@ -141,11 +199,16 @@ b {
     height: 100%;
     display: flex;
     flex-direction: column;
+
 }
 
 .keepcenter {
     max-width: 1171px;
     margin: 0 auto;
+    
+    @include respond(lg) {
+        padding: 0px 18px;
+    }
 }
 
 .main {
