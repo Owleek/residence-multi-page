@@ -328,13 +328,20 @@
     &__inner {
         background-image: url("../img/art_work_5.png");
         background-repeat: no-repeat;
-        background-position: 100% 50%;
+        background-position: 100% 0%;
         background-size: contain;
     }
 
     &__title {
         margin-bottom: 5.1rem;
     }
+
+    .subsection-card {
+        margin-bottom: 5.5rem;
+    } 
+
+    .subsection-list {
+    } 
 
     &__card {
     }
