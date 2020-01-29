@@ -25,6 +25,14 @@
     };
 }
 
+@function toRem($pixels) {
+    @return ($pixels / 16) + rem;
+}
+
+@function toEm($pixels, $parentfont: 16) {
+    @return ($pixels / $parentfont) + em;
+}
+
 $i-mapsign: f277;
 $i-university: f19c;
 $i-calendarcheck: f274;
