@@ -94,6 +94,8 @@ b {
     text-align: center;
     white-space: nowrap;
     transition: all 0.15s ease-in;
+    box-shadow: 0px 0.65em 0.65em 0px rgba(255, 90, 0, 0.3);
+
     cursor: pointer;
 
     &:hover {
@@ -189,6 +191,14 @@ b {
         border-color: $light-blue;
     }
 
+    &_shadow-dark {
+        box-shadow: 0px 0.65em 0.65em 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &_shadow-soft {
+        box-shadow: 0px 0.4em 0.4em 0px rgba(0, 0, 0, 0.15);
+    }
+
     &_border-1.btn_empty-lg,
     &_border-2.btn_empty-lg,
     &_border-3.btn_empty-lg,
@@ -206,6 +216,7 @@ b {
             font-weight: 400;
             color: inherit;
             white-space: inherit;
+            box-shadow: none;
         }
     }
 
@@ -213,6 +224,10 @@ b {
         position: absolute;
         left: 50%; bottom: 0;
         transform: translate(-50%, 50%);
+    }
+
+    &_min-w {
+        min-width: 336px;
     }
 }
 
