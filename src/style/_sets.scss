@@ -10,7 +10,7 @@ body {
     line-height: 1.5;
     min-width: 320px;
     font-family: "Roboto", sans-serif;
-    background-color: #f1f1f1;
+    background-color: $body-color;
     color: $black;
 }
 
@@ -79,10 +79,10 @@ b {
     border-width: 0;
     border-color: #ff5a00;
     border-style: solid;
-    padding: 1.52em 2.64em;
+    padding: toEm(25, 17) toEm(44, 17);
     border-radius: 100px;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.06rem;
+    font-size: toRem(17);
     font-weight: 500;
     color: $white;
     background: #ff5a00;
@@ -101,18 +101,30 @@ b {
     }
 
     &_sm {
-        font-size: 0.875rem;
-        padding: 0.71em 1.71em;
+        font-size: toRem(14);
+        padding: toEm(10, 14) toEm(24,14);
 
         @include respond(md) {
-            font-size: 0.625rem;
+            font-size: toRem(10);
         }
 
         &-const {
             @include respond(md) {
-                font-size: 0.875rem;
+                font-size: toRem(14);
             }
         }
+    }
+
+    &_sm.btn_border-3 {
+        padding: toEm(7, 14) toEm(21,14);
+    }
+    
+    &_sm.btn_border-2 {
+        padding: toEm(8, 14) toEm(22,14);
+    }
+    
+    &_sm.btn_border-1 {
+        padding: toEm(9, 14) toEm(23,14);
     }
 
     &_block {
@@ -139,14 +151,17 @@ b {
     
     &_border-3 {
         border-width: 3px;
+        padding: toEm(22, 17) toEm(41, 17);
     }
 
     &_border-2 {
         border-width: 2px;
+        padding: toEm(23, 17) toEm(42, 17);
     }
 
     &_border-1 {
         border-width: 1px;
+        padding: toEm(24, 17) toEm(43, 17);
     }
 
     &_icon {
@@ -174,6 +189,9 @@ b {
         border-color: $light-blue;
     }
 
+    &_border-1.btn_empty-lg,
+    &_border-2.btn_empty-lg,
+    &_border-3.btn_empty-lg,
     &_empty-lg {
         @media only screen and (min-width: 1024px) {
             border: 0;
@@ -189,6 +207,12 @@ b {
             color: inherit;
             white-space: inherit;
         }
+    }
+
+    &_abs-center {
+        position: absolute;
+        left: 50%; bottom: 0;
+        transform: translate(-50%, 50%);
     }
 }
 

@@ -190,6 +190,17 @@
             background-size: contain;
             background-position: 0% 50%;
         }
+
+        &_center {
+            text-align: center;
+
+            &:after {
+                content: "";
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+        }
    } 
 }
 
@@ -279,16 +290,10 @@
     }
 
     &__text-block {
-        position: relative;
-        background-color: $white;
         padding: 3.5em 3.75em 4.4em 5.25rem;
         margin-bottom: 8rem;
-    }
-
-    &__text-btn {
-        position: absolute;
-        left: 50%; bottom: 0;
-        transform: translate(-50%, 50%);
+        background-color: $white;
+        position: relative;
     }
 
     p {
@@ -323,6 +328,11 @@
 
 }
 
+.container {    
+    display: flex;
+    justify-content: space-between;
+}
+
 .conditions {
     
     &__inner {
@@ -342,6 +352,53 @@
 
     .subsection-list {
 
+        .title-block {
+            margin-bottom: toRem(30);
+        }
+
+        .heading {
+            font-size: toRem(28);
+            font-weight: 400;
+            color: $light-blue;
+            margin-bottom: 0;
+        }
+
+        .caption {
+            font-size: toRem(18);
+        }
+
+        .conditions__column {
+            flex-basis: 48.7%;
+            background-color: $white;
+            padding: toRem(36) toRem(82) toRem(21) toRem(33);
+            margin-bottom: toRem(63);
+        }
+        
+        .list-title {
+            font-size: toRem(18);
+            margin-bottom: toEm(25,18);
+            font-weight: bold;
+        }
+
+        .list {
+
+        }
+
+        .list__item {
+            margin-bottom: toEm(14,16);
+            padding-left: toEm(30,16);
+            position: relative;
+
+            &:before {
+                content: "\f138";
+                position: absolute;
+                left: 0; top: 50%;
+                transform: translateY(-50%);
+                font-family: "FontAwesome";
+                font-weight: 400;
+                color: $gray;
+            }
+        }
     } 
 
     &__card {
@@ -416,6 +473,184 @@
 
         &__text {
             font-weight: 300;
+        }
+    }
+}
+
+
+.offer-frame {
+    background-color: $white;
+    position: relative;
+    font-size: toRem(17);
+    margin: 0 auto;
+    max-width: 915px;
+    padding: toRem(52) 8% toRem(74);
+    text-align: center;
+
+    &__title {
+        margin-bottom: toEm(72,32);
+    }
+}
+
+.options {
+    padding-top: toRem(147);
+    background-image: url("../img/background_4.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin-bottom: toRem(180);
+
+    &__title {
+        max-width: toRem(660);
+        margin: 0 auto;
+        margin-bottom: toRem(125);
+    }
+
+    .narrow-holder {
+        max-width: 970px;
+        margin: 0 auto;
+    }
+
+    &__column {
+        color: $white;
+        background-color: rgba(24, 103, 163, 0.9);
+        border-radius: 10px;
+        flex-basis: toRem(470);
+        text-align: center;
+        padding: toRem(44) toRem(32) toRem(20);
+        margin-bottom: toRem(176);
+    }
+
+    .column {
+        &__title {
+            text-transform: uppercase;
+            font-size: toRem(16);
+            margin-bottom: toEm(20,16);
+        }
+
+        &__subject {
+            font-size: toRem(29);
+            font-weight: 300;
+            margin-bottom: toEm(30, 29);
+        }
+
+        &__text {
+            font-weight: 300;
+        }
+    }
+}
+
+.steps {
+    overflow: hidden;
+
+    &__title {
+        margin-bottom: toEm(150, 32);
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-right: -32px;
+    }
+
+    &__item {
+        margin-right: 32px;
+        margin-bottom: toRem(65);
+        flex-basis: calc(50% - 32px);
+    }
+
+    &__offer {
+        margin-bottom: toRem(100);
+    }
+}
+
+.step-card {
+    max-width: 570px;
+    background-color: $white;
+    font-size: toRem(14);
+    position: relative;
+    padding: toRem(30) toRem(40) toRem(22) toRem(46);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.07);
+
+    &__label {
+        font-family: "Inter UI", "Roboto", sans-serif;
+        font-size: toRem(30);
+        color: $white;
+        width: 86px;
+        height: 86px;
+        line-height: 76px;
+        background-color: $light-blue;
+        border: 7px solid $body-color;
+        border-radius: 50%;
+        position: absolute;
+        top: 0; right: 46px;
+        transform: translateY(-50%);
+        text-align: center;
+        display: inline-block;
+    }
+
+    &__title {
+        margin-bottom: toEm(26, 21);
+    }
+}
+
+.our-advantages {
+
+    &__inner {
+        padding-bottom: toRem(132);
+    }
+
+    &__column {
+        max-width: 670px;
+    }
+
+    &__title {
+        margin-bottom: toEm(65, 32);
+    }
+    
+    &__subtitle {
+        font-size: toRem(18);
+        margin-bottom: toEm(14, 18);
+    }
+
+    &__item {
+        margin-bottom: 5px;
+        padding-bottom: 1px;
+
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.special-offer {
+    background-color: $dark-blue;
+    color: $white;
+
+    &__inner {
+        max-width: 944px;
+        margin: 0 auto;
+        padding-top: toRem(55);
+        padding-bottom: 1px;
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: toEm(75, 32);
+    }
+
+    &__text {
+        padding: 0 toRem(100);
+    }
+
+    &__buttons {
+        margin-bottom: toRem(75);
+    }
+
+    &__btn {
+        &:not(:first-child) {
+            margin-left: toRem(28);
         }
     }
 }
