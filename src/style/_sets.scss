@@ -58,6 +58,7 @@ p {
 a {
     text-decoration: none;
     transition: all 0.15s ease-in;
+    cursor: pointer;
 }
 
 a:hover {
@@ -68,6 +69,12 @@ img {
     display: inline-block;
     vertical-align: middle;
     max-width: 100%;
+}
+
+input,
+select,
+input::placeholder {
+    font-family: 'Roboto', sans-serif;
 }
 
 b {
@@ -231,6 +238,31 @@ b {
     }
 }
 
+.pick-btn {
+    font-size: 1rem;
+    border: 1px solid #6491b3;
+    padding: toEm(24);
+    margin: 0px 5px 5px 0;
+    width: 75px; height: 70px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+    background: transparent;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    text-decoration: none !important;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.15s ease-in;
+    box-shadow: 0px 0.4em 0.4em 0px rgba(0, 0, 0, 0.15);
+}
+
+.pick-buttons {
+    padding-bottom: 1px;
+}
+
 .layout {
     position: relative;
     max-width: 1920px;
@@ -254,28 +286,40 @@ b {
     flex-grow: 1;
 }
 
-.image-wrapper,
-.video-wrapper {
+.image-holder {
     position: relative;
 
     &:before {
         display: block;
-        padding-top: 50%;
+        padding-top: 79.3%;
         content: "";
     }
 
-    .image,
-    .video {
+    .image {
+        display: block;
         position: absolute;
         top: 0; left: 0;
         width: 100%;
         height: 100%;
 
-        img,
-        video {
+        img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
+    }
+}
+
+.required {
+    display: inline-block;
+    position: relative;
+
+    &:before {
+        content: "*";
+        position: absolute;
+        top: 45%; right: -0.66em;
+        transform: translateY(-50%);
+        font-size: inherit;
+        color: $orange;
     }
 }

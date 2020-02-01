@@ -468,26 +468,6 @@
             margin-bottom: toEm(25,18);
             font-weight: bold;
         }
-
-        .list {
-
-        }
-
-        .list__item {
-            margin-bottom: toEm(14,16);
-            padding-left: toEm(30,16);
-            position: relative;
-
-            &:before {
-                content: "\f138";
-                position: absolute;
-                left: 0; top: 50%;
-                transform: translateY(-50%);
-                font-family: "FontAwesome";
-                font-weight: 400;
-                color: $gray;
-            }
-        }
     } 
 
     &__card {
@@ -562,6 +542,24 @@
 
         &__text {
             font-weight: 300;
+        }
+    }
+}
+
+.list {
+    &__item {
+        margin-bottom: toEm(14,16);
+        padding-left: toEm(30,16);
+        position: relative;
+
+        &:before {
+            content: "\f138";
+            position: absolute;
+            left: 0; top: 50%;
+            transform: translateY(-50%);
+            font-family: "FontAwesome";
+            font-weight: 400;
+            color: $gray;
         }
     }
 }
@@ -885,3 +883,173 @@
         }
     }
 }
+
+// guide page begin
+
+.guide,
+.calc-section {
+    overflow: hidden;
+
+    &:after {
+        width: 100%;
+        height: 1407px;
+        left: 0; top: 35px;
+        background-image: url("../img/background_8.png");
+        background-size: contain;
+        background-position: 0 0;
+        z-index: -1;
+    }
+}
+
+.guide {
+    
+    &__inner {
+        padding-top: toRem(86);
+        padding-bottom: 1px;
+    }
+
+    &__column {
+        width: calc(50% - 15px);
+    }
+
+    &__manual-image {
+        margin-top: toRem(20);
+        margin-bottom: toRem(35);
+    }
+
+    &__figcaption {
+        font-size: toRem(14);
+        display: block;
+        font-weight: 300;
+        margin-bottom: toRem(32);
+    }
+
+    &__list {
+        margin-bottom: toRem(158);
+    }
+}
+
+//  guide page end
+
+.form {
+    padding: toRem(50) toRem(47) 0 toRem(47);
+    background-color: $white;
+    box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.15);
+
+    &__heading {
+        margin-bottom: toRem(21);
+        padding-bottom: 1px;
+    }
+
+    &__title {
+        font-size: toRem(24);
+        margin-bottom: toEm(35,24);
+    }
+
+    &__heading-title {
+        margin-bottom: toRem(10);
+    }
+
+    &__desc {
+
+    }
+
+    &__pick {
+        display: flex;
+        margin-bottom: toRem(38);
+    }
+
+    &__pick-box {
+
+        & + & {
+            margin-left: toRem(80);
+        }
+    }
+
+    &__question {
+        font-size: toRem(18);
+        margin-bottom: toEm(22, 18);
+    }
+
+    &__input {
+        margin-bottom: toRem(19);
+
+        &:last-of-type {
+            margin-bottom: toRem(30);
+        }
+    }
+
+    form {
+        padding-bottom: toRem(84);
+        position: relative;
+    }
+
+    input {
+        padding: toRem(24);
+        font-weight: 300;
+        font-size: toRem(18);
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        color: $black;
+        width: 100%;
+        border: 1px solid #e4e4e4;
+
+        &::placeholder {
+            color: $black;
+        }
+    }
+
+    &__text {
+        font-size: toRem(14);
+        font-weight: 300;
+        margin-bottom: toRem(20);
+    }
+
+    &_wide {
+        padding: toRem(50) toRem(147) 0 toRem(147);
+    }
+}
+
+// costs page begin
+
+.calc-section {
+    padding-top: toRem(80);
+    padding-bottom: toRem(110);
+
+    &__holder {
+        max-width: 770px;
+        margin: 0 auto;
+    }
+
+    &__titles {
+        font-size: toRem(36);
+        padding-bottom: 1px;
+        margin-bottom: toRem(110);
+    }
+
+    &__subtitle {
+        font-weight: 500;
+    }
+    
+    &__title,
+    &__subtitle {
+        margin-bottom: 0;
+    }
+
+    &__form {
+        margin-bottom: toRem(95);
+    }
+
+    &__text {
+        font-size: toRem(18);
+        line-height: 1.3;
+        padding-bottom: 1px;
+
+        p {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+
+// costs page end
