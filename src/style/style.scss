@@ -111,34 +111,61 @@
         background-size: cover;
         position: absolute;
     }
+}
 
-    &__title {
-         position: relative;
- 
-         &:after {
-             content: "";
-             width: 115px;
-             height: 3px;
-             position: absolute;
-             bottom: -0.625em ; left: 0;
-             background-image: url("../img/art_work_4.png");
-             background-repeat: no-repeat;
-             background-size: contain;
-             background-position: 0% 50%;
-         }
- 
-         &_center {
-             text-align: center;
- 
-             &:after {
-                 content: "";
-                 left: 50%;
-                 transform: translateX(-50%);
-             }
- 
-         }
-    } 
- }
+.marked-title {
+    position: relative;
+
+    &:after {
+        content: "";
+        width: 115px;
+        height: 3px;
+        position: absolute;
+        bottom: -0.625em ; left: 0;
+        background-image: url("../img/art_work_4.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0% 50%;
+    }
+
+    &_center {
+        text-align: center;
+
+        &:after {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+    }
+} 
+
+.linear-shadow {
+    position: relative;
+    z-index: 1;
+    
+    &:before,
+    &:after {
+        content: "";
+        height: 5px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    &:before {
+        width: calc(100% - 20px);
+        background-color: #d2d2d2;
+        top: calc(100% + 3px);
+    }
+
+    &:after {
+        top: 100%;
+        width: calc(100% - 10px);
+        background-color: #e0e0e0;
+    }
+}
 
 .head-section {
     text-align: center;
@@ -673,9 +700,32 @@
 }
 
 .our-advantages {
+    z-index: 49;
+
+    &:after {
+        width: 100%;
+        height: 1835px;
+        background-size: contain;
+        background-image: url("../img/background_6.png");
+        left: 0; bottom: -69px;
+        z-index: -1;
+    }
 
     &__inner {
         padding-bottom: toRem(132);
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            right: 0; bottom: 0;
+            width: 475px;
+            height: 811px;
+            background-image: url("../img/art_work_7.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+        }
     }
 
     &__column {
@@ -704,6 +754,7 @@
 .special-offer {
     background-color: $dark-blue;
     color: $white;
+    z-index: 50;
 
     &__inner {
         max-width: 944px;
@@ -719,6 +770,7 @@
 
     &__text {
         padding: 0 toRem(100);
+        margin-bottom: toRem(62);
     }
 
     &__buttons {
