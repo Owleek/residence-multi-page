@@ -1,7 +1,7 @@
 @mixin respond($device) {
 
     @if $device == xl {
-        @media only screen and (max-width: 1399px) {
+        @media only screen and (max-width: 1920px) {
             @content;
         }
     };
@@ -18,8 +18,8 @@
         }
     };
 
-    @if $device == us {
-        @media only screen and (max-width: 479px) {
+    @if $device == sm {
+        @media only screen and (max-width: 567px) {
             @content;
         }
     };

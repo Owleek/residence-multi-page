@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    line-height: 1.5;
+    line-height: 1.3;
     min-width: 320px;
     font-family: "Roboto", sans-serif;
     background-color: $body-color;
@@ -31,10 +31,18 @@ h1 {
 
 h2 {
     font-size: 2rem;
+
+    @include respond(md) {
+        font-size: toRem(22);
+    }
 }
 
 h3 {
     font-size: 1.625rem;
+
+    @include respond(md) {
+        font-size: toRem(20);
+    }
 } 
 
 h4, h5 {
@@ -47,7 +55,7 @@ h4, h5 {
 
 h5 {
     @include respond(md) {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 }
 
@@ -102,11 +110,23 @@ b {
     white-space: nowrap;
     transition: all 0.15s ease-in;
     box-shadow: 0px 0.65em 0.65em 0px rgba(255, 90, 0, 0.3);
-
     cursor: pointer;
 
     &:hover {
         color: inherit;
+    }
+
+    @include respond(md) {
+        width: toRem(272);
+        line-height: 1;
+        padding-top: toEm(19, 17);
+        padding-bottom: toEm(19, 17);
+    }
+
+    @media only screen and (min-width: 1024px) {
+        br {
+            display: none;
+        }
     }
 
     &_sm {
@@ -122,18 +142,37 @@ b {
                 font-size: toRem(14);
             }
         }
+
+        @include respond(md) {
+            width: auto;
+            min-width: toRem(136);
+        }
     }
+
+
 
     &_sm.btn_border-3 {
         padding: toEm(7, 14) toEm(21,14);
+
+        @include respond(md) {
+            padding: toEm(2, 14) toEm(12,14);
+        }
     }
     
     &_sm.btn_border-2 {
         padding: toEm(8, 14) toEm(22,14);
+
+        @include respond(md) {
+            padding: toEm(9, 14) toEm(13,14);
+        }
     }
     
     &_sm.btn_border-1 {
         padding: toEm(9, 14) toEm(23,14);
+
+        @include respond(md) {
+            padding: toEm(10, 14) toEm(14,14);
+        }
     }
 
     &_block {
@@ -321,5 +360,11 @@ b {
         transform: translateY(-50%);
         font-size: inherit;
         color: $orange;
+    }
+}
+
+.hidden-mob {
+    @include respond(md) {
+        display: none;
     }
 }
