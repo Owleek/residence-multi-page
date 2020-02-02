@@ -71,3 +71,7 @@ $body-color: #f1f1f1;
 @function tovw($value) {
     @return ($value / 19.2) + vw;
 }
+
+@function tovwM($value) {
+    @return ($value / 3.2) + vw;
+}
