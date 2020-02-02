@@ -112,8 +112,30 @@ b {
     box-shadow: 0px 0.65em 0.65em 0px rgba(255, 90, 0, 0.3);
     cursor: pointer;
 
+    &:before {
+        content: "";
+        background: #fff;
+        height: 155px;
+        left: -75px;
+        opacity: .2;
+        position: absolute;
+        top: -50px;
+        transform: rotate(35deg);
+        transition: background 650ms cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        width: 50px;
+        z-index: -10;
+    }
+    
+    
     &:hover {
-        color: inherit;
+        background: lighten(#ff5a00, 10%);
+    
+        &:before {
+            z-index: 1000;
+            left: 120%;
+            transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
     }
 
     &_min-w {
@@ -196,10 +218,18 @@ b {
     &_bg-white {
         background: #ffffff;
         color: $black;
+
+        &:hover {
+            color: $white;
+        }
     }
 
     &_bg-dark-blue {
         background: #172239;
+
+        &:hover {
+            background: lighten(#172239, 10%);
+        }
     }
 
     &_color-black {
@@ -294,6 +324,7 @@ b {
     }
 }
 
+
 .pick-btn {
     font-size: 1rem;
     border: 1px solid #6491b3;
@@ -341,7 +372,7 @@ b {
     margin: 0 auto;
     
     @include respond(lg) {
-        padding: 0px $lg-indent;
+        padding: 0px lightent();
     }
 
     @include respond(md) {
