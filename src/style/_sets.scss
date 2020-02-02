@@ -116,11 +116,18 @@ b {
         color: inherit;
     }
 
+    &_min-w {
+        min-width: 336px;
+
+        @include respond(md) {
+            min-width: auto;
+        }
+    }
+
     @include respond(md) {
-        width: toRem(272);
+        width: toRem(270);
         line-height: 1;
-        padding-top: toEm(19, 17);
-        padding-bottom: toEm(19, 17);
+        padding: toEm(19, 17) toEm(20, 17);
     }
 
     @media only screen and (min-width: 1024px) {
@@ -137,41 +144,43 @@ b {
             font-size: toRem(10);
         }
 
-        &-const {
-            @include respond(md) {
-                font-size: toRem(14);
-            }
-        }
-
+        
         @include respond(md) {
             width: auto;
             min-width: toRem(136);
+        }
+
+        &-const {
+            @include respond(md) {
+                font-size: toRem(14) !important;
+                padding: toEm(15, 14) toEm(38, 14) !important;
+            }
         }
     }
 
 
 
     &_sm.btn_border-3 {
-        padding: toEm(7, 14) toEm(21,14);
+        padding: toEm(7, 14) toEm(21, 14);
 
         @include respond(md) {
-            padding: toEm(2, 14) toEm(12,14);
+            padding: toEm(8, 14) toEm(12, 14);
         }
     }
     
     &_sm.btn_border-2 {
-        padding: toEm(8, 14) toEm(22,14);
+        padding: toEm(8, 14) toEm(22 ,14);
 
         @include respond(md) {
-            padding: toEm(9, 14) toEm(13,14);
+            padding: toEm(9, 14) toEm(13, 14);
         }
     }
     
     &_sm.btn_border-1 {
-        padding: toEm(9, 14) toEm(23,14);
+        padding: toEm(9, 14) toEm(23, 14);
 
         @include respond(md) {
-            padding: toEm(10, 14) toEm(14,14);
+            padding: toEm(10, 14) toEm(14, 14);
         }
     }
 
@@ -200,16 +209,28 @@ b {
     &_border-3 {
         border-width: 3px;
         padding: toEm(22, 17) toEm(41, 17);
+
+        @include respond(md) {
+            padding: toEm(16, 17) toEm(17, 17);
+        }
     }
 
     &_border-2 {
         border-width: 2px;
         padding: toEm(23, 17) toEm(42, 17);
+
+        @include respond(md) {
+            padding: toEm(17, 17) toEm(18, 17);
+        }
     }
 
     &_border-1 {
         border-width: 1px;
         padding: toEm(24, 17) toEm(43, 17);
+
+        @include respond(md) {
+            padding: toEm(18, 17) toEm(19, 17);
+        }
     }
 
     &_icon {
@@ -271,10 +292,6 @@ b {
         left: 50%; bottom: 0;
         transform: translate(-50%, 50%);
     }
-
-    &_min-w {
-        min-width: 336px;
-    }
 }
 
 .pick-btn {
@@ -317,11 +334,29 @@ b {
     margin: 0 auto;
     
     @include respond(lg) {
-        padding: 0px 60px;
+        padding: 0px $lg-indent;
+    }
+
+    @include respond(md) {
+        padding: 0px $md-indent;
     }
 
     @include respond(sm) {
-        padding: 0px 10px;
+        padding: 0px $sm-indent;
+    }
+
+    @include respond(xs) {
+        padding: 0px $xs-indent;
+    }
+
+    &_narrow-indent-mob {
+        @include respond(xs) {
+            padding: 0px $xs-narrow-indent;
+
+            .fix-narrow-indent {
+                margin-left: diffNarrows();
+            }
+        }
     }
 }
 
@@ -369,6 +404,12 @@ b {
 
 .hidden-mob {
     @include respond(md) {
-        display: none;
+        display: none !important;
+    }
+}
+
+.hidden-lg {
+    @media only screen and (min-width: 1024px) {
+        display: none !important;
     }
 }

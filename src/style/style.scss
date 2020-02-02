@@ -14,7 +14,6 @@
 
     @include respond(md) {
         padding: 0;
-        overflow: hidden;
     }
 
     a {
@@ -28,17 +27,33 @@
         @include respond(md) {
             flex-direction: column;
             justify-content: flex-start;
+            padding-bottom: toRem(17);
         }
     }
 
     &__left-column {
+        @include respond(lg) {
+            margin-right: -$lg-indent;
+            margin-left: -$lg-indent;
+        }
+        
         @include respond(md) {
             background-color: $white;
             text-align: center;
             padding: 0.75em 0px;
-            margin-right: -10px;
-            margin-left: -10px;
+            margin-right: -$md-indent;
+            margin-left: -$md-indent;
             margin-bottom: 1.125em;
+        }
+
+        @include respond(sm) {
+            margin-right: -$sm-indent;
+            margin-left: -$sm-indent;
+        }
+
+        @include respond(xs) {
+            margin-right: -$xs-narrow-indent;
+            margin-left: -$xs-narrow-indent;
         }
     }
 
@@ -187,7 +202,7 @@
     }
 
     @include respond(md) {
-        padding-top: 9.5em;
+        padding-top: toRem(135);
     }
 
     &__column {
@@ -810,6 +825,9 @@
         margin-bottom: toRem(107);
 
         @include respond(md) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
             margin-right: 0;
             margin-bottom: toRem(36);
         }
@@ -829,6 +847,10 @@
 
     &__offer {
         margin-bottom: toRem(180);
+
+        @include respond(md) {
+            margin-bottom: toRem(105);
+        }
     }
 }
 
@@ -903,6 +925,10 @@
         padding-bottom: toRem(132);
         position: relative;
 
+        @include respond(md) {
+            padding-bottom: toRem(72);
+        }
+
         &:before {
             content: "";
             position: absolute;
@@ -913,6 +939,10 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: 0 0;
+
+            @include respond(md) {
+                display: none;
+            }
         }
     }
 
@@ -922,6 +952,10 @@
 
     &__title {
         margin-bottom: toEm(65, 32);
+
+        @include respond(md) {
+            margin-bottom: toRem(58);
+        }
     }
     
     &__subtitle {
@@ -935,6 +969,10 @@
 
         &:last-child {
             margin-bottom: 30px;
+
+            @include respond(md) {
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -944,31 +982,66 @@
     color: $white;
     z-index: 50;
 
+    @include respond(md) {
+        font-size: toRem(15);
+    }
+
     &__inner {
         max-width: 944px;
         margin: 0 auto;
         padding-top: toRem(55);
         padding-bottom: 1px;
         text-align: center;
+
+        @include respond(md) {
+            padding-top: toRem(35);
+        }
     }
 
     &__title {
         margin-bottom: toEm(75, 32);
+
+        @include respond(md) {
+            margin-bottom: toRem(44);
+        }
     }
 
     &__text {
         padding: 0 toRem(100);
         margin-bottom: toRem(62);
+
+        @include respond(md) {
+            padding: 0;
+            margin-bottom: toRem(30);
+        }
     }
 
     &__buttons {
         margin-bottom: toRem(75);
+
+        @include respond(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: toRem(39);
+        }
     }
 
     &__btn {
         &:not(:first-child) {
             margin-left: toRem(28);
+
+            @include respond(md) {
+                margin-left: 0;
+            }
         }
+
+        &:not(:last-child) {
+            @include respond(md) {
+                margin-bottom: 1rem;
+            }
+        }
+        
     }
 }
 
@@ -979,6 +1052,10 @@
 .footer {
     padding-top: 2.5em;
     padding-bottom: 2.875em;
+
+    @include respond(md) {
+        font-size: toRem(14);
+    }
 
     &__inner {
         display: flex;
@@ -1001,7 +1078,10 @@
 
     &__contact {
         .contact-label {
-
+            @include respond(md) {
+                display: inline-block;
+                margin-bottom: 5px;
+            }
         }
 
         .contact {
@@ -1010,6 +1090,10 @@
             font-size: 1.81rem;
             color: $black;
             font-weight: 700;
+
+            @include respond(md) {
+                font-size: toRem(26);
+            }
         }
     }
 
@@ -1096,10 +1180,19 @@
     &__inner {
         padding-top: toRem(86);
         padding-bottom: 1px;
+
+        @include respond(md) {
+            padding-top: toRem(18);
+            padding-bottom: toRem(92);
+        }
     }
 
     &__column {
         width: calc(50% - 15px);
+
+        @include respond(md) {
+            width: auto;
+        }
     }
 
     &__manual-image {
@@ -1116,15 +1209,28 @@
 
     &__list {
         margin-bottom: toRem(158);
+
+        @include respond(md) {
+            margin-bottom: toRem(52);
+        }
     }
 }
 
 //  guide page end
 
+.form-container {
+    margin-right: - diffNarrows();
+    margin-left: - diffNarrows();
+}
+
 .form {
     padding: toRem(50) toRem(47) 0 toRem(47);
     background-color: $white;
     box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.15);
+
+    @include respond(md) {
+        padding: toRem(23) toRem(20) 0 toRem(20);
+    }
 
     &__heading {
         margin-bottom: toRem(21);
@@ -1134,6 +1240,10 @@
     &__title {
         font-size: toRem(24);
         margin-bottom: toEm(35,24);
+
+        @include respond(md) {
+            font-size: toRem(18);
+        }
     }
 
     &__heading-title {
@@ -1164,14 +1274,26 @@
     &__input {
         margin-bottom: toRem(19);
 
+        @include respond(md) {
+            margin-bottom: toRem(12);
+        }
+
         &:last-of-type {
             margin-bottom: toRem(30);
+
+            @include respond(md) {
+                margin-bottom: toRem(20);
+            }
         }
     }
 
     form {
         padding-bottom: toRem(84);
         position: relative;
+
+        @include respond(md) {
+            padding-bottom: toRem(44);
+        }
     }
 
     input {
@@ -1184,6 +1306,12 @@
         width: 100%;
         border: 1px solid #e4e4e4;
 
+        @include respond(md) {
+            border-radius: 2px;
+            font-size: toRem(14);
+            padding: toRem(13) toRem(20);
+        }
+
         &::placeholder {
             color: $black;
         }
@@ -1193,6 +1321,11 @@
         font-size: toRem(14);
         font-weight: 300;
         margin-bottom: toRem(20);
+
+        @include respond(md) {
+            font-size: toRem(12);
+        }
+
     }
 
     &_wide {
