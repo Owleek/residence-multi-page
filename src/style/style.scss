@@ -1235,6 +1235,10 @@
     &__heading {
         margin-bottom: toRem(21);
         padding-bottom: 1px;
+
+        @include respond(md) {
+            margin-bottom: 0;
+        }
     }
 
     &__title {
@@ -1248,27 +1252,45 @@
 
     &__heading-title {
         margin-bottom: toRem(10);
+
+        @include respond(md) {
+            margin-bottom: 1rem;
+        }
     }
 
     &__desc {
-
+        @include respond(md) {
+            font-size: toRem(14);
+        }
     }
 
     &__pick {
         display: flex;
         margin-bottom: toRem(38);
+
+        @include respond(md) {
+            margin-bottom: toRem(18);
+        }
     }
 
     &__pick-box {
 
         & + & {
             margin-left: toRem(80);
+
+            @include respond(md) {
+                margin-left: toRem(40);
+            }
         }
     }
 
     &__question {
         font-size: toRem(18);
         margin-bottom: toEm(22, 18);
+
+        @include respond(md) {
+            font-size: toRem(14);
+        }
     }
 
     &__input {
@@ -1330,6 +1352,12 @@
 
     &_wide {
         padding: toRem(50) toRem(147) 0 toRem(147);
+
+        @include respond(md) {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: toRem(30) toRem(10) 0 toRem(20);
+        }
     }
 }
 
@@ -1338,6 +1366,11 @@
 .calc-section {
     padding-top: toRem(80);
     padding-bottom: toRem(110);
+
+    @include respond(md) {
+        padding-top: toRem(32);
+        padding-bottom: toRem(36);
+    }
 
     &__holder {
         max-width: 770px;
@@ -1348,27 +1381,64 @@
         font-size: toRem(36);
         padding-bottom: 1px;
         margin-bottom: toRem(110);
+
+        @include respond(md) {
+            margin-bottom: toRem(67);
+
+            &.marked-title {
+                &:after {
+                    bottom: -0.525em;
+                } 
+            }
+        }
+
+    }
+
+    &__titles
+
+    &__title {
+        margin-bottom: 0;
+
+        @include respond(md) {
+            margin-bottom: toRem(12);
+        }
     }
 
     &__subtitle {
         font-weight: 500;
-    }
-    
-    &__title,
-    &__subtitle {
         margin-bottom: 0;
+
+        @include respond(md) {
+            font-size: toRem(16);
+            padding: 0 toRem(20);
+        }
     }
 
     &__form {
         margin-bottom: toRem(95);
+
+        @include respond(md) {
+            margin-bottom: toRem(70);
+        }
     }
 
     &__text {
         font-size: toRem(18);
         padding-bottom: 1px;
 
+        @include respond(md) {
+            font-size: toRem(14);
+            padding: 0 diffNarrows() 1px;
+            max-width: 500px;
+            margin: 0 auto;            
+        }
+
         p {
             margin-bottom: 1em;
+
+            @include respond(md) {
+                margin-bottom: 1rem;
+            }
         }
     }
 }
