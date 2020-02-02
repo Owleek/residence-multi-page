@@ -26,7 +26,7 @@ $body-color: #f1f1f1;
 @mixin respond($device) {
 
     @if $device == xl {
-        @media only screen and (max-width: 1920px) {
+        @media only screen and (max-width: 1919px) {
             @content;
         }
     };
@@ -68,3 +68,6 @@ $body-color: #f1f1f1;
     @return ($xs-indent - $xs-narrow-indent);
 }
 
+@function tovw($value) {
+    @return ($value / 19.2) + vw;
+}

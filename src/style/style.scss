@@ -31,12 +31,7 @@
         }
     }
 
-    &__left-column {
-        @include respond(lg) {
-            margin-right: -$lg-indent;
-            margin-left: -$lg-indent;
-        }
-        
+    &__left-column {        
         @include respond(md) {
             background-color: $white;
             text-align: center;
@@ -122,7 +117,7 @@
 
     &:before,
     &:after {
-        // content: "";
+        content: "";
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -195,10 +190,16 @@
     &:after {
         width: 100%;
         height: 628px;        
-        left: 0; bottom: -185px;
+        left: 0; 
+        bottom: -185px;
         transform: translateY(50%);
         background-image: url("../img/background_0.png");
         background-position: 50% 50%;
+
+        @include respond(xl) {
+            height: tovw(628);         
+            bottom: - tovw(185);     
+        }
     }
 
     @include respond(md) {
@@ -289,6 +290,10 @@
         left: 0; top: 0;
         background-image: url("../img/background_2.png");
         background-position: 100% 100%;
+
+        @include respond(xl) {
+            height: tovw(1124);
+        }
     }
 
     &:after {
@@ -298,6 +303,12 @@
         transform: translateX(-100%); 
         background-position: 50% 50%;
         background-image: url("../img/art_work_3.png");
+
+        @include respond(xl) {
+            height: tovw(773);
+            width: tovw(507);
+            right: - tovw(144);
+        }
     }
     
     &__inner {
@@ -487,15 +498,28 @@
         height: 1784px;
         background-image: url("../img/background_3.png");
         background-position: 50% 50%;
-        left: 0; top: -421px;
+        left: 0; bottom: -182px;
         z-index: -1;
+
+        @include respond(xl) {
+            height: tovw(1784);
+            bottom: - tovw(182);
+        }
     }
 
     &:after {
         width: 624px;
         height: 928px;
         background-image: url("../img/art_work_5.png");
-        right: 237px; top: -13px;
+        right: 237px; bottom: 258px;
+        z-index: -1;
+
+        @include respond(xl) {
+            width: tovw(624);
+            height: tovw(928);
+            right: tovw(237);
+            bottom: tovw(258);
+        }
     }
 
 
@@ -603,7 +627,7 @@
             position: absolute;
             left: -1px; top: 0px;
             width: 580px;
-            height: 520px;
+            height: 485px;
             background-image: url("../img/art_work_6.png");
             background-size: contain;
             background-repeat: no-repeat;
@@ -736,10 +760,15 @@
         width: 100%;
         height: 1478px;
         background-image: url("../img/background_5.png");
-        left: 0; top: 690px;
+        left: 0; bottom: -995px;
         background-position: 50% 50%;
         background-size: contain;
         z-index: -1;
+
+        @include respond(xl) {
+            height: tovw(1478);
+            bottom: - tovw(995);
+        }
     }
 
     &__title {
@@ -919,6 +948,11 @@
         background-image: url("../img/background_6.png");
         left: 0; bottom: -69px;
         z-index: -1;
+
+        @include respond(xl) {
+            height: tovw(1835);
+            bottom: - tovw(69);
+        }
     }
 
     &__inner {
@@ -939,6 +973,11 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: 0 0;
+
+            @include respond(xl) {
+                width: tovw(475);
+                height: tovw(811);
+            }
 
             @include respond(md) {
                 display: none;
@@ -1167,11 +1206,16 @@
     &:after {
         width: 100%;
         height: 1407px;
-        left: 0; top: 35px;
+        left: 0; bottom: -486px;
         background-image: url("../img/background_8.png");
-        background-size: contain;
-        background-position: 0 0;
+        background-size: cover;
+        background-position: 50% 50%;
         z-index: -1;
+
+        @include respond(xl) {
+            height: tovw(1407);
+            bottom: - tovw(486);
+        }
     }
 }
 
@@ -1230,6 +1274,8 @@
 
     @include respond(md) {
         padding: toRem(23) toRem(20) 0 toRem(20);
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     &__heading {
@@ -1354,8 +1400,6 @@
         padding: toRem(50) toRem(147) 0 toRem(147);
 
         @include respond(md) {
-            max-width: 500px;
-            margin: 0 auto;
             padding: toRem(30) toRem(10) 0 toRem(20);
         }
     }

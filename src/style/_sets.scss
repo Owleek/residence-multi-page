@@ -372,7 +372,7 @@ b {
     margin: 0 auto;
     
     @include respond(lg) {
-        padding: 0px lightent();
+        padding: 0px $lg-indent;
     }
 
     @include respond(md) {
@@ -404,6 +404,8 @@ b {
 
 .image-holder {
     position: relative;
+    max-width: 400px;
+    margin: 0 auto;
 
     &:before {
         display: block;
@@ -424,6 +426,10 @@ b {
             object-fit: contain;
         }
     }
+}
+
+.relative {
+    position: relative;
 }
 
 .required {
@@ -450,4 +456,8 @@ b {
     @media only screen and (min-width: 1024px) {
         display: none !important;
     }
+}
+
+.text-center {
+    text-align: center;
 }
