@@ -317,7 +317,11 @@ b {
     margin: 0 auto;
     
     @include respond(lg) {
-        padding: 0px 18px;
+        padding: 0px 60px;
+    }
+
+    @include respond(sm) {
+        padding: 0px 10px;
     }
 }
 

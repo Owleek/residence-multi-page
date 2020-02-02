@@ -14,6 +14,7 @@
 
     @include respond(md) {
         padding: 0;
+        overflow: hidden;
     }
 
     a {
@@ -35,8 +36,8 @@
             background-color: $white;
             text-align: center;
             padding: 0.75em 0px;
-            margin-right: -18px;
-            margin-left: -18px;
+            margin-right: -10px;
+            margin-left: -10px;
             margin-bottom: 1.125em;
         }
     }
@@ -695,6 +696,10 @@
     &__title {
         margin-bottom: toEm(72,32);
     }
+
+    @include respond(md) {
+        padding: toRem(30) toRem(15) toRem(20);
+    }
 }
 
 .options {
@@ -705,6 +710,12 @@
     background-repeat: no-repeat;
     margin-bottom: toRem(180);
     z-index: 40;
+
+    @include respond(md) {
+        padding-top: 5.3rem;
+        font-size: toRem(14);
+        margin-bottom: toRem(96);
+    }
 
     &:after {
         width: 100%;
@@ -721,11 +732,20 @@
         margin: 0 auto;
         margin-bottom: toRem(125);
         line-height: 1.37;
+
+        @include respond(md) {
+            margin-bottom: toRem(40);
+        }
     }
 
     .narrow-holder {
         max-width: 970px;
         margin: 0 auto;
+
+        @include respond(md) {
+            margin-bottom: toRem(42);
+            padding-bottom: 1px;
+        }
     }
 
     &__column {
@@ -736,6 +756,13 @@
         text-align: center;
         padding: toRem(44) toRem(32) toRem(20);
         margin-bottom: toRem(176);
+
+        @include respond(md) {
+            background-color: rgba(0, 89, 158, 0.9);
+            padding: toRem(37) toRem(20) toRem(10);
+            flex-basis: auto;
+            margin-bottom: toRem(32);
+        }
     }
 
     .column {
@@ -754,6 +781,10 @@
         &__text {
             font-weight: 300;
             line-height: 1.4;
+
+            @include respond(md) {
+                margin-bottom: toRem(8);
+            }
         }
     }
 }
@@ -764,6 +795,11 @@
 
     &__title {
         margin-bottom: toEm(150, 32);
+
+        @include respond(md) {
+            padding: 0px toRem(28) 0px;
+            margin-bottom: toRem(58);
+        }
     }
 
     &__list {
@@ -772,12 +808,23 @@
         flex-wrap: wrap;
         margin-right: -32px;
         margin-bottom: toRem(107);
+
+        @include respond(md) {
+            margin-right: 0;
+            margin-bottom: toRem(36);
+        }
     }
 
     &__item {
         margin-right: 32px;
         margin-bottom: toRem(65);
         flex-basis: calc(50% - 32px);
+
+        @include respond(md) {
+            flex-basis: auto;
+            margin-right: 0;
+            margin-bottom: toRem(34);
+        }
     }
 
     &__offer {
@@ -792,6 +839,10 @@
     position: relative;
     padding: toRem(30) toRem(40) toRem(22) toRem(46);
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.07);
+
+    @include respond(md) {
+        padding: toRem(30) toRem(20) toRem(20) toRem(20);
+    }
 
     &__label {
         font-family: "Inter UI", "Roboto", sans-serif;
@@ -808,10 +859,31 @@
         transform: translateY(-50%);
         text-align: center;
         display: inline-block;
+
+        @include respond(md) {
+            font-size: toRem(15);
+            width: 45px;
+            height: 45px;
+            right: 14px;
+            line-height: 39px;
+            border: 3px solid $body-color;
+        }
     }
 
     &__title {
         margin-bottom: toEm(26, 21);
+
+        @include respond(md) {
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            line-height: 1.2
+        }
+    }
+
+    &__text {
+        @include respond(md) {
+            margin-bottom: toRem(11);
+        }
     }
 }
 
