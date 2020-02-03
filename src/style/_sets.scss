@@ -92,7 +92,7 @@ b {
 
 .btn {
     border-width: 0;
-    border-color: #ff5a00;
+    border-color: $orange;
     border-style: solid;
     padding: toEm(25, 17) toEm(44, 17);
     border-radius: 100px;
@@ -111,6 +111,7 @@ b {
     transition: all 0.15s ease-in;
     box-shadow: 0px 0.65em 0.65em 0px rgba(255, 90, 0, 0.3);
     cursor: pointer;
+    user-select: none;
 
     &:before {
         content: "";
@@ -129,7 +130,7 @@ b {
     
     
     &:hover {
-        background: lighten(#ff5a00, 10%);
+        background: lighten($orange, 10%);
     
         &:before {
             z-index: 1000;
@@ -300,6 +301,25 @@ b {
     &_border-2.btn_empty-lg,
     &_border-3.btn_empty-lg,
     &_empty-lg {
+        &:before {
+            content: "";
+            background: none;
+            height: 0;
+            width: 0;
+            left: 0;
+            opacity: 0;
+            top: 0;
+            transform: none;
+            transition: none;
+        }
+
+        &:hover {
+            background: none;
+            &:before {
+                left: 0;
+            }
+        }
+
         @media only screen and (min-width: 1024px) {
             border: 0;
             padding: 0;
@@ -342,8 +362,10 @@ b {
     text-decoration: none !important;
     text-align: center;
     white-space: nowrap;
-    transition: all 0.15s ease-in;
+    transition: all 0.2s ease-in;
     box-shadow: 0px 0.4em 0.4em 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    user-select: none;
 
     @include respond(md) {
         font-size: toRem(14);
@@ -351,10 +373,22 @@ b {
         border-radius: 3px;
         padding: toEm(12);
     }
+
 }
 
 .pick-buttons {
     padding-bottom: 1px;
+}
+
+.radio {
+    appearance: none;
+    position: absolute;
+}
+
+.radio:checked  + .pick-btn {
+    background: $orange;
+    color: $white;
+    border-color: transparent;
 }
 
 .layout {

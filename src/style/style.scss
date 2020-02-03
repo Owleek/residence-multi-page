@@ -204,7 +204,7 @@
         @include respond(md) {
             height: tovwM(268);
             bottom: - tovwM(100);
-            background-image: url("../img/art_work_10m.png");
+            background-image: url("../img/background_0m.png");
         }
     }
 
@@ -300,6 +300,11 @@
         @include respond(xl) {
             height: tovw(1124);
         }
+
+        @include respond(xs) {
+            height: tovwM(514);
+            background-image: url("../img/background_2m.png");
+        }
     }
 
     &:after {
@@ -320,7 +325,6 @@
     }
 
     @include respond(md){
-        &:before,
         &:after {
             display: none !important;
         }
@@ -1050,6 +1054,12 @@
             }
         }
     }
+
+    &__btn-holder {
+        @include respond(md) {
+            text-align: center;
+        }
+    }
 }
 
 .special-offer {
@@ -1247,7 +1257,7 @@
         width: 100%;
         height: 1407px;
         left: 0; bottom: -486px;
-        background-image: url("../img/background_8.png");
+        background-image: url("../img/background_7.png");
         background-size: cover;
         background-position: 50% 50%;
         z-index: -1;
@@ -1399,6 +1409,12 @@
         }
     }
 
+    &__success {
+        display: none;
+        text-align: center;
+        padding-bottom: toRem(30);
+    }
+
     form {
         padding-bottom: toRem(84);
         position: relative;
@@ -1408,7 +1424,7 @@
         }
     }
 
-    input {
+    input[type="text"] {
         padding: toRem(24);
         font-weight: 300;
         font-size: toRem(18);
